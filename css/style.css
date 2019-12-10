@@ -2,4 +2,57 @@ html,
 body {
     height: 100%;
     width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.square {
+    height: 100%;
+    width: 100%;
+}
+
+.square-right {
+    animation-name: left-to-right-background;
+    animation-duration: 0.3s;
+}
+
+.square-left {
+    animation-name: right-to-left-background;
+    animation-duration: 0.3s;
+}
+
+.square-overlay-right {
+    display: none;
+    height: 100%;
+    width: 100%;
+    animation-name: left-to-right-background;
+    animation-duration: 0.3s;
+}
+
+.square-overlay-left {
+    display: none;
+    height: 100%;
+    width: 100%;
+    animation-name: right-to-left-background;
+    animation-duration: 0.3s;
+}
+
+@keyframes left-to-right-background {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes right-to-left-background {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }

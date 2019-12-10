@@ -63,10 +63,16 @@ var previousColor = function () {
         colors.pop(colors[colors.length-1]);
         square.style.backgroundColor = colors[colors.length-1];
         overlayLeft.style.backgroundColor = colors[colors.length-1];
-    };  
+    };
 };
 
 window.addEventListener("keydown", function(evt) {
+    if (colors.length > 1) {
+        body.style.backgroundColor = square.style.backgroundColor;
+    } else {
+        body.style.backgroundColor = colors[0];
+    };
+
     if (evt.keyCode === RIGHT_KEYCODE) {
         evt.preventDefault();
         pressedRight +=1;
